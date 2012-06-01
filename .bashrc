@@ -106,8 +106,13 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1="\n\\[\033[0;36m\]\T \
-[\[\033[1;34m\]\u@\H\[\033[0;37m\]\
-\[\033[0;32m\]\[\033[1;30m\]] \[\033[1;37m\]\w\[\033[0;37m\] \n\$ "
+# kostaz: playing with bash prompt
+PS1="\w\n\$ "
+# PS1="$PS1 \n------->\$ "
+# PS1="\n\[\033[0;34m\]]\T \[\u@\H \w\n\$ "
+# PS1="\n\\[\033[0;36m\]\T \
+# [\[\033[1;34m\]\u@\H\[\033[0;37m\]\
+# \[\033[0;32m\]\[\033[1;30m\]] \n\[\033[1;36m\]\w \n\$ "
+# PS1="[ ~~~~~~~~ \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h ~~~~~~~~ ]\w\$ "
 
 
