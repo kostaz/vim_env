@@ -592,7 +592,7 @@ set shiftwidth=8
 set smarttab
 
 " call ToggleShowWhitespace()
-set listchars=tab:>-
+set listchars=tab:>-,trail:-
 set nolist
 
 map <F9> :TlistToggle<CR>
@@ -601,7 +601,7 @@ map <F8> :set list!<CR>
 
 " set guifont=Courier\ 10\ Pitch\ 10
 " set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Ubuntu\ Mono\ 12
+set guifont=Ubuntu\ Mono\ 14
 
 map <F3> :cnext<CR>
 map <S-F3> :cprev<CR>
@@ -609,7 +609,8 @@ map <leader>c :copen<CR>
 map <leader>s :Grep -ir <cword> 
 
 set cursorline
-set nowrap
+" set nowrap
+set wrap
 
 set lines=999 columns=999
 
