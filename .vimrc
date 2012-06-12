@@ -593,7 +593,7 @@ set shiftwidth=8
 set smarttab
 
 " call ToggleShowWhitespace()
-set listchars=tab:>-
+set listchars=tab:>-,trail:-
 set nolist
 
 map <F9> :TlistToggle<CR>
