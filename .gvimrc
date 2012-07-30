@@ -117,7 +117,7 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/vimrc
 " => VIM user interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set 7 lines to the curors - when moving vertical..
-set so=2
+set so=1
 
 set wildmenu "Turn on WiLd menu
 
@@ -581,7 +581,7 @@ map <leader>bb :cd ..<cr>
 " unmap <Right>
 " colors koehler
 colors default
-set so=2
+set so=1
 
 source ~/.vim/buff_select.vim
 source ~/.vim/hl_white_space.vim
@@ -601,16 +601,17 @@ map <F8> :set list!<CR>
 
 " set guifont=Courier\ 10\ Pitch\ 10
 " set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Ubuntu\ Mono\ 14
+set guifont=Ubuntu\ Mono\ 10
 
 map <F3> :cnext<CR>
 map <S-F3> :cprev<CR>
 map <leader>c :copen<CR>
-map <leader>s :Grep -ir <cword> 
+map <leader>s :Grep -ir <cword>
+map <leader>h :GrepBuffer -i expand("<cword>")<CR>
 
 set cursorline
-" set nowrap
-set wrap
+set nowrap
+" set wrap
 
 set lines=999 columns=999
 
