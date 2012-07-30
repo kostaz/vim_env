@@ -107,7 +107,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 # kostaz: playing with bash prompt
-PS1="\w\n\$ "
+PS1="\n[\w] \$ "
 # PS1="$PS1 \n------->\$ "
 # PS1="\n\[\033[0;34m\]]\T \[\u@\H \w\n\$ "
 # PS1="\n\\[\033[0;36m\]\T \
@@ -115,4 +115,18 @@ PS1="\w\n\$ "
 # \[\033[0;32m\]\[\033[1;30m\]] \n\[\033[1;36m\]\w \n\$ "
 # PS1="[ ~~~~~~~~ \[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\u@\h ~~~~~~~~ ]\w\$ "
 
+alias mkfind='find . -iname "*makefile*" -o \
+		     -iname "*kconfig*"  -o \
+		     -iname "*.mk" | xargs grep -inH --color=auto '
+alias kfind='find . -iname "*kconfig*" | xargs grep -inH --color=auto '
+alias chsfind='find . -iname "*.[chs]" | xargs grep --color=auto -inH '
+alias hfind='find . -iname "*.[h]" | xargs grep --color=auto -inH '
+alias noncfind='find . -not -iname "*[chs]" | xargs grep -inH --color=auto '
+alias ofind='find . -iname "*.[o]" | xargs grep --color=auto -inH '
+alias sfind='find . -iname "*.[s]" | xargs grep --color=auto -inH '
+alias gg='git grep -in --untracked '
+alias gs='git status'
+alias gd='git diff '
+alias ga='git add '
+alias gb='git branch'
 
