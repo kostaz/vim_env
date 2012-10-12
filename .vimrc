@@ -601,3 +601,12 @@ map <F7> :call ToggleShowWhitespace()<CR>
 map <F8> :set list!<CR>
 
 
+set diffexpr=MyDiff()
+function MyDiff()
+    let opt = ""
+    if &diffopt =~ "iwhite"
+        let opt = opt . "--ignore-all-space --ignore-blank-lines "
+    endif
+    silent execute "!diff -a --binary " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
+endfunction
+
