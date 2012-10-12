@@ -18,3 +18,16 @@ git config user.name 'KostaZ'
 # or send a series of all patches which start by 00* by:
 #
 # [~] $ git send-email --to user@marvell.com  00*
+
+# git-email config may be added to .gitconfig
+# [sendemail]
+# 	smtpserver = maili.marvell.com
+# 	smtpserverport = 25
+# 	cc = benavi@marvell.com
+# 	cc = konszert@marvell.com
+# 	cc = tawfik@marvell.com
+# 	cc = nadavh@marvell.com
+# 	cc = dima@marvell.com
+# [user]
+# 	email = konszert@marvell.com
+# 	name = KostaZ
