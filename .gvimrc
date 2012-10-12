@@ -601,7 +601,7 @@ map <F8> :set list!<CR>
 
 " set guifont=Courier\ 10\ Pitch\ 10
 " set guifont=DejaVu\ Sans\ Mono\ 10
-set guifont=Ubuntu\ Mono\ 10
+set guifont=Ubuntu\ Mono\ 15
 
 map <F3> :cnext<CR>
 map <S-F3> :cprev<CR>
@@ -611,7 +611,7 @@ map <leader>h :GrepBuffer -i expand("<cword>")<CR>
 
 set cursorline
 set nowrap
-" set wrap
+set wrap
 
 set lines=999 columns=999
 
@@ -620,4 +620,13 @@ set lines=999 columns=999
 
 " empty test change
 
+set diffexpr=MyDiff()
+function MyDiff()
+    let opt = ""
+    if &diffopt =~ "iwhite"
+        let opt = opt . "--ignore-all-space --ignore-blank-lines "
+    endif
+    silent execute "!diff -a --binary " . opt . v:fname_in . " " . v:fname_new . " > " . v:fname_out
+endfunction
 
+colorscheme vc
