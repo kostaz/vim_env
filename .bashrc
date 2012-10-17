@@ -124,9 +124,15 @@ alias hfind='find . -iname "*.[h]" | xargs grep --color=auto -inH '
 alias noncfind='find . -not -iname "*[chs]" | xargs grep -inH --color=auto '
 alias ofind='find . -iname "*.[o]" | xargs grep --color=auto -inH '
 alias sfind='find . -iname "*.[s]" | xargs grep --color=auto -inH '
+
+# git aliases
 alias gg='git grep -in --untracked '
+alias sgg='git grep -n --untracked '
 alias gs='git status'
 alias gd='git diff '
 alias ga='git add '
 alias gb='git branch'
 
+# repo aliases
+alias rs='repo status'
+alias rb='repo branch'
