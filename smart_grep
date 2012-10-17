@@ -1,0 +1,14 @@
+#!/bin/bash
+
+board_dir=$1
+search_pattern=$2
+
+find board\/$board_dir \
+	-iname "*.[chs]" \
+	-exec grep -inH --color=auto $search_pattern {} \;
+
+find arch\/arm \
+	-iname "*.[chs]" \
+	-exec grep -inH --color=auto $search_pattern {} \;
+
+grep -irnH --color=auto --exclude-dir=board --exclude-dir=arch $search_pattern .
