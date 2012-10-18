@@ -1,0 +1,20 @@
+#!/bin/bash
+read -s -p "Enter password: "
+
+sudo umount ~/my/mnt/Sw
+sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //10.4.4.101/SW ~/my/mnt/Sw
+
+sudo umount ~/my/mnt/fileril104
+sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //10.4.4.104/SW_archive ~/my/mnt/fileril104
+
+sudo umount ~/my/mnt/dumps
+sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //10.4.4.101/dumps ~/my/mnt/dumps
+
+sudo umount ~/my/mnt/my_work
+sudo mount -a -t cifs //10.4.50.48/my_work -o username=konszert,uid=kosta,gid=kosta,file_mode=0777,dir_mode=0777,password=$REPLY ~/my/mnt/my_work
+
+# sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //fileril104/SW_archive /mnt/fileril104
+# sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //galileo101/dumps /mnt/galileo101_dumps
+# sudo mount -t cifs -o username=konszert,workgroup=marvell,password=$REPLY //marvell.com/israel /mnt/marvell_il
+# sudo mount -t nfs fileril104:/vol/v_f104_swdev/users/konszert /mnt/backup_vol
+
