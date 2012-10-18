@@ -1,0 +1,16 @@
+#!/bin/bash
+
+search_pattern=$1
+case_sensitive=$2
+
+find board\/mv_ebu \
+	-iname "*.[chs]" \
+	-exec grep $case_sensitive -nH --color=auto $search_pattern {} \;
+
+find arch\/arm\/cpu\/armv7 \
+	-iname "*.[chs]" \
+	-exec grep $case_sensitive -nH --color=auto $search_pattern {} \;
+
+grep $case_sensitive -rnH --color=auto $search_pattern include/configs/armada_xp.h
+grep $case_sensitive -rnH --color=auto $search_pattern include/configs/armada_370.h
+grep $case_sensitive -rnH --color=auto --exclude-dir=board --exclude-dir=arch --exclude-dir=include/configs $search_pattern .
