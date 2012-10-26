@@ -120,10 +120,12 @@ alias mkfind='find . -iname "*makefile*" -o \
 		     -iname "*.mk" | xargs grep -inH --color=auto '
 alias kfind='find . -iname "*kconfig*" | xargs grep -inH --color=auto '
 alias chsfind='find . -iname "*.[chs]" | xargs grep --color=auto -inH '
+alias schsfind='find . -iname "*.[chs]" | xargs grep --color=auto -nH '
 alias hfind='find . -iname "*.[h]" | xargs grep --color=auto -inH '
 alias noncfind='find . -not -iname "*[chs]" | xargs grep -inH --color=auto '
 alias ofind='find . -iname "*.[o]" | xargs grep --color=auto -inH '
 alias sfind='find . -iname "*.[s]" | xargs grep --color=auto -inH '
+alias shfind='find . -iname "*.[h]" | xargs grep --color=auto -nH '
 
 # git aliases
 alias gg='git grep -in --untracked '
@@ -134,5 +136,7 @@ alias ga='git add '
 alias gb='git branch'
 
 # repo aliases
-alias rs='repo status'
-alias rb='repo branch'
+alias rs='repo forall -c git status'
+alias rb='repo forall -c git branch'
+alias rd='repo forall -c git diff'
+alias ra='repo forall -c '
