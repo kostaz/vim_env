@@ -124,6 +124,9 @@ alias kfind='find . -iname "*kconfig*" | xargs grep -inH --color=auto '
 alias chsfind='find . -iname "*.[chs]" | xargs grep --color=auto -inH '
 alias schsfind='find . -iname "*.[chs]" | xargs grep --color=auto -nH '
 
+alias conlyfind='find . -iname "*.[c]" | xargs grep --color=auto -inH '
+alias sconlyfind='find . -iname "*.[c]" | xargs grep --color=auto -nH '
+
 alias cfind='find . -iname "*.[chs]" | xargs grep --color=auto -inH '
 alias scfind='find . -iname "*.[chs]" | xargs grep --color=auto -nH '
 
